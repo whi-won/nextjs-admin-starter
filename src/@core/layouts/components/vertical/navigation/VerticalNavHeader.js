@@ -87,13 +87,14 @@ const VerticalNavHeader = props => {
   const MenuLockedIcon = () => userMenuLockedIcon || <Icon icon='tabler:circle-dot' />
   const MenuUnlockedIcon = () => userMenuUnlockedIcon || <Icon icon='tabler:circle' />
 
+  // NavHeader쪽에 이미지 제거
   return (
     <MenuHeaderWrapper className='nav-header' sx={{ pl: menuHeaderPaddingLeft(), ...conditionalColors() }}>
       {userNavMenuBranding ? (
         userNavMenuBranding(props)
       ) : (
         <LinkStyled href='/'>
-          <svg width={32} height={22} viewBox='0 0 32 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          {/* <svg width={32} height={22} viewBox='0 0 32 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path
               fillRule='evenodd'
               clipRule='evenodd'
@@ -120,7 +121,7 @@ const VerticalNavHeader = props => {
               fill={theme.palette.primary.main}
               d='M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z'
             />
-          </svg>
+          </svg> */}
           <HeaderTitle variant='h6' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2.5 }) }}>
             {themeConfig.templateName}
           </HeaderTitle>

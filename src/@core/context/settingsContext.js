@@ -32,16 +32,19 @@ const staticSettings = {
 
 const restoreSettings = () => {
   let settings = null
-  try {
-    const storedData = window.localStorage.getItem('settings')
-    if (storedData) {
-      settings = { ...JSON.parse(storedData), ...staticSettings }
-    } else {
-      settings = initialSettings
-    }
-  } catch (err) {
-    console.error(err)
-  }
+
+  // try {
+  //   const storedData = window.localStorage.getItem('settings')
+  //   if (storedData) {
+  //     settings = { ...JSON.parse(storedData), ...staticSettings }
+  //   } else {
+  //     settings = initialSettings
+  //   }
+  // } catch (err) {
+  //   console.error(err)
+  // }
+
+  settings = initialSettings
 
   return settings
 }

@@ -128,31 +128,15 @@ const LoginPage = () => {
       })
     })
   }
-  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
+
+  // const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
 
   return (
-    <Box className='content-right' sx={{ backgroundColor: 'background.paper' }}>
-      {!hidden ? (
-        <Box
-          sx={{
-            flex: 1,
-            display: 'flex',
-            position: 'relative',
-            alignItems: 'center',
-            borderRadius: '20px',
-            justifyContent: 'center',
-            backgroundColor: 'customColors.bodyBg',
-            margin: theme => theme.spacing(8, 0, 8, 8)
-          }}
-        >
-          <LoginIllustration alt='login-illustration' src={`/images/pages/${imageSource}-${theme.palette.mode}.png`} />
-          <FooterIllustrationsV2 />
-        </Box>
-      ) : null}
+    <Box className='content-center' sx={{ backgroundColor: 'background.paper' }}>
       <RightWrapper>
         <Box
           sx={{
-            p: [6, 12],
+            p: [0, 12],
             height: '100%',
             display: 'flex',
             alignItems: 'center',
@@ -224,7 +208,7 @@ const LoginPage = () => {
                 />
                 {errors.email && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
               </FormControl>
-              <FormControl fullWidth sx={{ mb: 1.5 }}>
+              <FormControl fullWidth sx={{ mb: 7 }}>
                 <InputLabel htmlFor='auth-login-v2-password' error={Boolean(errors.password)}>
                   Password
                 </InputLabel>
@@ -261,61 +245,9 @@ const LoginPage = () => {
                   </FormHelperText>
                 )}
               </FormControl>
-              <Box
-                sx={{
-                  mb: 1.75,
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  justifyContent: 'space-between'
-                }}
-              >
-                <FormControlLabel
-                  label='Remember Me'
-                  control={<Checkbox checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />}
-                />
-                <LinkStyled href='/forgot-password'>Forgot Password?</LinkStyled>
-              </Box>
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 4 }}>
                 Login
               </Button>
-              <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography sx={{ color: 'text.secondary', mr: 2 }}>New on our platform?</Typography>
-                <Typography variant='body2'>
-                  <LinkStyled href='/register' sx={{ fontSize: '1rem' }}>
-                    Create an account
-                  </LinkStyled>
-                </Typography>
-              </Box>
-              <Divider
-                sx={{
-                  fontSize: '0.875rem',
-                  color: 'text.disabled',
-                  '& .MuiDivider-wrapper': { px: 6 },
-                  my: theme => `${theme.spacing(6)} !important`
-                }}
-              >
-                or
-              </Divider>
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <IconButton href='/' component={Link} sx={{ color: '#497ce2' }} onClick={e => e.preventDefault()}>
-                  <Icon icon='mdi:facebook' />
-                </IconButton>
-                <IconButton href='/' component={Link} sx={{ color: '#1da1f2' }} onClick={e => e.preventDefault()}>
-                  <Icon icon='mdi:twitter' />
-                </IconButton>
-                <IconButton
-                  href='/'
-                  component={Link}
-                  onClick={e => e.preventDefault()}
-                  sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
-                >
-                  <Icon icon='mdi:github' />
-                </IconButton>
-                <IconButton href='/' component={Link} sx={{ color: '#db4437' }} onClick={e => e.preventDefault()}>
-                  <Icon icon='mdi:google' />
-                </IconButton>
-              </Box>
             </form>
           </Box>
         </Box>
@@ -323,6 +255,7 @@ const LoginPage = () => {
     </Box>
   )
 }
+
 LoginPage.getLayout = page => <BlankLayout>{page}</BlankLayout>
 LoginPage.guestGuard = true
 

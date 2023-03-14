@@ -9,22 +9,15 @@ import Icon from 'src/@core/components/icon'
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 
+// ModeToggler(화면모드 변환 제거)
 const AppBarContent = props => {
   // ** Props
   const { hidden, settings, saveSettings, toggleNavVisibility } = props
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
-        {hidden ? (
-          <IconButton color='inherit' sx={{ ml: -2.75 }} onClick={toggleNavVisibility}>
-            <Icon fontSize='1.5rem' icon='tabler:menu-2' />
-          </IconButton>
-        ) : null}
-
-        <ModeToggler settings={settings} saveSettings={saveSettings} />
-      </Box>
-      <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box className='actions-left' sx={{ mr: 2, display: 'flex', alignItems: 'center' }}></Box>
+      <Box className='actions-right' sx={{ display: 'flex', alignItems: 'right' }}>
         <UserDropdown settings={settings} />
       </Box>
     </Box>
