@@ -5,14 +5,16 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 // ** Spinner Import
-import Spinner from 'src/@core/components/spinner'
+// import Spinner from 'src/@core/components/spinner'
 
 // ** Hook Imports
 import { useAuth } from 'src/hooks/useAuth'
 
 export const getHomeRoute = role => {
-  if (role === 'client') return '/acl'
-  else return '/home'
+  // if (role === 'client') return '/acl'
+  // else return '/home'
+
+  return '/home'
 }
 
 const Home = () => {
@@ -34,7 +36,7 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return <Spinner />
+  // return <Spinner />
 }
 
 export default Home

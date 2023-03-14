@@ -55,6 +55,7 @@ const AuthProvider = ({ children }) => {
             }
           })
       } else {
+        console.log('???')
         setLoading(false)
       }
     }
@@ -62,6 +63,7 @@ const AuthProvider = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  //Login시 userData 저장하는거 삭제
   const handleLogin = (params, errorCallback) => {
     axios
       .post(authConfig.loginEndpoint, params)
@@ -71,7 +73,8 @@ const AuthProvider = ({ children }) => {
           : null
         const returnUrl = router.query.returnUrl
         setUser({ ...response.data.userData })
-        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
+
+        // params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
         const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
         router.replace(redirectURL)
       })

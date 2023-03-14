@@ -16,7 +16,12 @@ const AuthGuard = props => {
       if (!router.isReady) {
         return
       }
-      if (auth.user === null && !window.localStorage.getItem('userData')) {
+      console.log(auth.user)
+      console.log(window.localStorage.getItem('userData'))
+
+      // if (auth.user === null && !window.localStorage.getItem('userData')) {
+      // localStorage에 저장된 userData를 체크하지 않도록 변경
+      if (auth.user === null) {
         if (router.asPath !== '/') {
           router.replace({
             pathname: '/login',
