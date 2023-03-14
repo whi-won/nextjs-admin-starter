@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import Icon from 'src/@core/components/icon'
 
 // ** Components
-import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
+// import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
 
 // ModeToggler(화면모드 변환 제거)

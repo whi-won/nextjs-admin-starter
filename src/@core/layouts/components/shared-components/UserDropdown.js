@@ -79,6 +79,7 @@ const UserDropdown = props => {
     handleDropdownClose()
   }
 
+  //유저 아이콘 설정 구역
   return (
     <Fragment>
       <Badge
@@ -133,27 +134,8 @@ const UserDropdown = props => {
         </MenuItemStyled>
         <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
           <Box sx={styles}>
-            <Icon icon='tabler:mail' />
-            Inbox
-          </Box>
-        </MenuItemStyled>
-        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
-          <Box sx={styles}>
-            <Icon icon='tabler:message-2' />
-            Chat
-          </Box>
-        </MenuItemStyled>
-        <Divider sx={{ my: theme => `${theme.spacing(2)} !important` }} />
-        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
-          <Box sx={styles}>
             <Icon icon='tabler:settings' />
             Settings
-          </Box>
-        </MenuItemStyled>
-        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
-          <Box sx={styles}>
-            <Icon icon='tabler:currency-dollar' />
-            Pricing
           </Box>
         </MenuItemStyled>
         <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
