@@ -111,12 +111,12 @@ const data = {
     {
       id: 1,
       userId: 1,
-      unseenMsgs: 1,
+      unseenMsgs: 0,
       chat: [
         {
           message: "How can we help? We're here for you!",
           time: 'Mon Dec 10 2018 07:45:00 GMT+0000 (GMT)',
-          senderId: 11,
+          senderId: 1,
           feedback: {
             isSent: true,
             isDelivered: true,

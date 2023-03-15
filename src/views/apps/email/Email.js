@@ -18,6 +18,8 @@ import SidebarLeft from 'src/views/apps/email/SidebarLeft'
 import ComposePopup from 'src/views/apps/email/ComposePopup'
 
 // ** Actions
+// src/store/apps/email 에서 export 된 함수들
+// handleSelectMail, handleSelectAllMail는 createSlice로 생성된 애의 reducer 부분
 import {
   fetchMails,
   updateMail,
